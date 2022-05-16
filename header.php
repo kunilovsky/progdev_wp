@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The header for our theme
  *
@@ -12,8 +13,9 @@
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
@@ -21,39 +23,30 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'progdev' ); ?></a>
-
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$progdev_description = get_bloginfo( 'description', 'display' );
-			if ( $progdev_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $progdev_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'progdev' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+	<?php wp_body_open(); ?>
+	<!-- Header -->
+	<header class="sticky-top">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">ProgDev</a>
+				<button class="btn nav-link targetMain__mob" type="button" data-bs-toggle="modal" data-bs-target="#targetMain">Начать проект</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuButton" aria-controls="menuButton" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="menuButton">
+						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="#"></a>
+								&#128075; Как проходит работа</a>
+							</li>
+							<li class="nav-item">
+								<button class=" btn nav-link targetMain" type="button" data-bs-toggle="modal" data-bs-target="#targetMain" href="#">
+									&#128104;&#8205;&#128187; Начать проект
+									&#128105;&#8205;&#128187;</button>
+							</li>
+						</ul>
+					</div>
+			</div>
+		</nav>
+	</header>
+	<!-- /Header -->
