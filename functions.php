@@ -99,6 +99,7 @@ add_action( 'widgets_init', 'progdev_widgets_init' );
  * Enqueue scripts and styles.
  */
 function progdev_scripts() {
+	wp_enqueue_style( 'progdev-font', get_template_directory_uri() . '/font/fonts.css' );
 	wp_enqueue_style( 'progdev-style_BS', get_template_directory_uri() . '/style/bootstrap5.1.min.css' );
 	wp_enqueue_style( 'progdev-style_Main', get_template_directory_uri() . '/style/style.css' );
 	wp_enqueue_script( 'progdev-bootstrap_JS', get_template_directory_uri() . '/js/bootstrap.min.js', true);
@@ -121,4 +122,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-

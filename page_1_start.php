@@ -22,7 +22,7 @@ get_header();
                     </button>
                 </div>
                 <div class="col-lg-6">
-                    <lottie-player class="animation__start" src="assets/json/1.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                    <lottie-player class="animation__start" src="/wp-includes/js/1.json" background="transparent" speed="1" loop autoplay></lottie-player>
                 </div>
             </div>
         </div>
